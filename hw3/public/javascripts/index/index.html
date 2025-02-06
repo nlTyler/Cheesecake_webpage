@@ -1,0 +1,118 @@
+<!-- Author: Tyler Crosbie -->
+<!-- Date: January 22, 2025 -->
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheesecake Order Form</title>
+    <link rel="stylesheet" href="color.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Record notes, topping, and quantity
+            $(".order-form").on("submit", function (e) {
+                e.preventDefault(); // Prevent form submission
+                const notes = $("textarea").val().toLowerCase();
+                const topping = $("input[name='topping']:checked").val();
+                const quantity = $("select").val();
+
+                if (notes.includes("vegan")) {
+                    alert("Warning: Cheesecakes contain dairy!");
+                } else {
+                    // Swap to order confirmation page
+                    $(".order-form").html(`
+                        <h3>Thank you! Your order has been placed.</h3>
+                        <p><strong>Topping:</strong> ${topping}</p>
+                        <p><strong>Quantity:</strong> ${quantity}</p>
+                        <p><strong>Notes:</strong> ${notes}</p>
+                    `);
+                }
+            });
+
+            // Dropdown Menu
+            $(".dropdown-widget").mouseenter(function () {
+                $(".dropdown-menu").show();
+            });
+
+            $(".dropdown-menu").mouseleave(function () {
+                $(".dropdown-menu").hide();
+            });
+
+            $(".dropdown-menu a").on("click", function (e) {
+                e.preventDefault();
+                const selectedMonth = $(this).text();
+                $(".dropdown-widget").text(selectedMonth);
+                $(".dropdown-menu").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Cheesecake Order Form</h1>
+        <h3>Yum Yum</h3>
+    </header>
+
+    <!--Cheesecake Image-->
+    <section>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHSFhf0gGwcMNe9IT3AO--s0hDgEmdn7s59w&s"  class="cheesecake-image">
+    </section>
+
+    <!--Order Form-->
+    <main>
+        <form class="order-form">
+            <!--Quantity Dropdown-->
+            <label >Choose quantity:</label>
+            <select>
+                <option >1</option>
+                <option >2</option>
+                <option >3</option>
+                <option >4</option>
+            </select>
+
+            <!--Topping Options-->
+            <p>Select your topping:</p>
+            <label>
+                <input type="radio" name="topping" value="Plain"> Plain
+            </label>
+            <label>
+                <input type="radio" name="topping" value="Cherry"> Cherry
+            </label>
+            <label>
+                <input type="radio" name="topping" value="Chocolate"> Chocolate
+            </label>
+
+            <!--Notes Box-->
+            <p>Notes:</p>
+            <textarea placeholder="Enter any special instructions here"></textarea>
+
+            <!--Order Button-->
+            <button >Order</button>
+        </form>
+    </main>
+
+    <!--Total Orders List-->
+    <footer>
+        <h3>Orders for <span class="dropdown-widget">Jan</span></h3>
+        <div class="dropdown-menu">
+            <a href="#">Jan</a>
+            <a href="#">Feb</a>
+            <a href="#">Mar</a>
+            <a href="#">Apr</a>
+            <a href="#">May</a>
+            <a href="#">Jun</a>
+            <a href="#">Jul</a>
+            <a href="#">Aug</a>
+            <a href="#">Sep</a>
+            <a href="#">Oct</a>
+            <a href="#">Nov</a>
+            <a href="#">Dec</a>
+        </div>
+        <p>11 Cherry</p>
+        <p>17 Chocolate</p>
+        <p>31 Plain</p>
+    </footer>
+</body>
+</html>

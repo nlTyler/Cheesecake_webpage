@@ -1,0 +1,98 @@
+/* Author: Tyler Crosbie */
+/* Date: January 22, 2025 */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff8e1;
+    color: #4e342e;
+}
+
+/* Header */
+header {
+    background-color: #b6251c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+header h3 {
+    margin: 10px;
+}
+
+/* Cheesecake Image */
+.cheesecake-image {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+}
+
+/* Order Form Box */
+main {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.order-form label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.order-form select,
+.order-form textarea,
+.order-form input[type="radio"] {
+    margin: 5px 0;
+}
+
+.order-form textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+/* Dropdown Menu */
+.dropdown-widget {
+    cursor: pointer;
+    color: #ff7043;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    max-height: 150px;
+    overflow-y: scroll;
+    width: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.dropdown-menu a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #4e342e;
+    cursor: pointer;
+}
+.dropdown-menu a:hover {
+    background-color: #fbe9e7;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4e342e;
+    color: #fbe9e7;
+    margin-top: 20px;
+}
